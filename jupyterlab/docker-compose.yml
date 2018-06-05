@@ -1,0 +1,8 @@
+
+jupyterlab:
+  build: .
+  ports:
+    - "8888:8888"
+  volumes:
+    - ~:/data
+  command: jupyter lab --ip=* --port=8888 --no-browser --notebook-dir=/data --LabApp.websocket_compression_options={}

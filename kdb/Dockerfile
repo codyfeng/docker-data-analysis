@@ -6,7 +6,9 @@ ENV QHOME /q
 ENV PATH ${PATH}:${QHOME}/l32/
 
 # Install rlwrap and kdb+
-RUN KDB_VERSION="3.6" && \
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
+    sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
+    KDB_VERSION="3.6" && \
     dpkg --add-architecture i386 && \
     apt-get update && \
     apt-get install -y curl rlwrap unzip lib32z1 lib32ncurses5 libsnappy1v5:i386 gosu && \
