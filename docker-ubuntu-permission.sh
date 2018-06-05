@@ -2,7 +2,7 @@
 # Script to make files written to docker's mounted folder to have the same owner as the folder,
 # thus avoiding everything being owned by root.
 #
-# Added by Shen Feng, 20 Sep 2017.
+# Added by Cody Feng, 20 Sep 2017.
 #
 
 VOLUME=/data
