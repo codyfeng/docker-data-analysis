@@ -1,8 +1,8 @@
 # 32bit kdb+ Docker image
 
-This Dockerfile downloads and installs kdb+ 32bit version 3.5 from kx.com. The working directory is `/data`.
+This Dockerfile downloads and installs kdb+ 32bit version 3.6 from kx.com. The working directory is `/data`.
 
-`docker-entrypoint.sh` is a script to make files written to Docker's mounted folder `/data` to have the same owner as the folder. This avoids everything written to `/data` being owned by root. This could be useful when producing new data.
+`docker-ubuntu-permission.sh` is a script to make files written to Docker's mounted folder `/data` to have the same owner as the folder. This avoids everything written to `/data` being owned by root, which could be useful when writing new data.
 
 ## How to Use
 
@@ -32,4 +32,11 @@ docker run --rm -it -v `pwd`:/data -w /data kdb q
 
 ## Change Log
 
+* Jun 5, 2018
+  
+  1. Fix kdb+ binary download by adding https to the url.
+  2. Update kdb+ to 3.6.
 
+* Mar 29, 2018
+  
+  * First version on GitHub.
